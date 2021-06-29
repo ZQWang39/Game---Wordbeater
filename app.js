@@ -93,7 +93,7 @@ const words = [
 
   function matchWords(){
       if(wordInput.value === currentWord.textContent){
-        //result.style.color = "green"
+        result.style.color = "green"
         message.textContent ="Correct!!!"
         return true;
       }else{
@@ -118,6 +118,7 @@ const words = [
   function checkStatus(){
 
     if(!isPlaying && time === 0){
+       result.style.color = "red";
         message.textContent = "Game Over!!!"
         score = -1;
     }
