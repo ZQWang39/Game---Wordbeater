@@ -8,9 +8,9 @@ const levels = {
     hard: 1
 }
 
-//To change level
-const currentLevel = levels.easy; 
+
 //Globals
+let currentLevel;
 let time = currentLevel;
 let score = 0;
 let isPlaying;
@@ -22,6 +22,7 @@ const timeDisplay = document.querySelector(".time");
 const message = document.querySelector('.result');
 const seconds = document.querySelector('.second');
 const result = document.querySelector('.result');
+const gameLevel = document.getElementById('level');
 
 const words = [
     'hat',
@@ -54,6 +55,8 @@ const words = [
   //Initialize game
 
   function init(){
+      // Game level
+      gameLevel.addEventListener('change',selectGameLevel);
       //load word from array
       showWord(words);
       //Match on word input
@@ -64,6 +67,20 @@ const words = [
       setInterval(checkStatus, 5)
       // Show number of seconds
       seconds.textContent = currentLevel;
+  }
+
+
+  function selectGameLevel(){
+    //console.log(gameLevel.value);
+    if (gameLevel.value === "easy"){
+      //To change level
+        currentLevel = levels.easy; 
+    }else if(gameLevel.value === "medium"){
+        currentLevel = levels.medium;
+    }else{
+       currentLevel = levels.hard;
+    }
+    console.log(currentLevel);
   }
 
   //pick & show random word
