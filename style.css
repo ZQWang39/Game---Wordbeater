@@ -41,7 +41,7 @@ body{
 
 .chooseLevel #level{
     margin-top:25px;
-    width:75px;
+    width:200px;
     height:25px;
     outline: none;
     border-radius: 5px;

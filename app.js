@@ -10,7 +10,7 @@ const levels = {
 
 
 //Globals
-let currentLevel;
+
 let time = currentLevel;
 let score = 0;
 let isPlaying;
@@ -71,6 +71,7 @@ const words = [
 
 
   function selectGameLevel(){
+    let currentLevel;
     //console.log(gameLevel.value);
     if (gameLevel.value === "easy"){
       //To change level
