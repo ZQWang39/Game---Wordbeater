@@ -45,6 +45,7 @@ body{
     font-size: 80px;
     margin-top: 20px;
     color:rgb(240, 248, 248);
+    box-shadow: 5px 3px 3px rgb(32, 30, 30);
 }
 
 #input{
