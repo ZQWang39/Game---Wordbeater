@@ -3,17 +3,20 @@ window.addEventListener('load', init);
 
 //Avaliable levels
 const levels = {
-    easy: 5,
-    medium: 3,
-    hard: 1
+  easy: 5,
+  medium: 3,
+  hard: 1
 }
-
-
+//const currentLevel = levels.easy;
 //Globals
+/*
+let currentLevel;
 
-let time = currentLevel;
+let time;
 let score = 0;
 let isPlaying;
+*/
+
 
 const wordInput = document.getElementById('wordInput');
 const currentWord = document.querySelector('.word');
@@ -23,6 +26,17 @@ const message = document.querySelector('.result');
 const seconds = document.querySelector('.second');
 const result = document.querySelector('.result');
 const gameLevel = document.getElementById('level');
+
+
+//const currentLevel = levels.easy;
+//Globals
+let currentLevel;
+
+let time;
+let score = 0;
+let isPlaying;
+
+
 
 const words = [
     'hat',
@@ -71,23 +85,23 @@ const words = [
 
 
   function selectGameLevel(){
-    let currentLevel;
-    //console.log(gameLevel.value);
+    console.log(gameLevel.value);
     if (gameLevel.value === "easy"){
       //To change level
-        currentLevel = levels.easy; 
+      let currentLevel =  levels.easy; 
     }else if(gameLevel.value === "medium"){
-        currentLevel = levels.medium;
+      let currentLevel =  levels.medium;
     }else{
-       currentLevel = levels.hard;
+      let currentLevel =  levels.hard;
     }
     console.log(currentLevel);
+    
   }
 
   //pick & show random word
     function showWord(words){
       const index = Math.floor(Math.random() * words.length);
-      console.log(currentWord)
+      //console.log(currentWord)
       currentWord.textContent = words[index]; 
   }
 
@@ -122,6 +136,8 @@ const words = [
 
   //Countdown timer
    function countdown(){
+     //console.log(time);
+   
      if(time > 0){
          time--;
 
@@ -134,7 +150,6 @@ const words = [
   //Check game status
 
   function checkStatus(){
-
     if(!isPlaying && time === 0){
        result.style.color = "red";
         message.textContent = "Game Over!!!"
