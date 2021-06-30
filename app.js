@@ -27,12 +27,28 @@ const seconds = document.querySelector('.second');
 const result = document.querySelector('.result');
 const gameLevel = document.getElementById('level');
 
+let currentLevel= 0;
+ // Choose game level
+ gameLevel.addEventListener('change',function selectGameLevel(){
+  console.log(gameLevel.value);
+  if (gameLevel.value === "easy"){
+    //To change level
+    currentLevel =  levels.easy; 
+    
+  }else if(gameLevel.value === "medium"){
+    currentLevel =  levels.medium;
+  }else if (gameLevel.value === "hard"){
+    currentLevel =  levels.hard;
+  }else{
+    currentLevel = 0;
+  }
+  //console.log(currentLevel);
+  seconds.textContent = currentLevel;
+  
+});
 
-//const currentLevel = levels.easy;
-//Globals
-let currentLevel;
 
-let time;
+let time = currentLevel;
 let score = 0;
 let isPlaying;
 
@@ -69,8 +85,7 @@ const words = [
   //Initialize game
 
   function init(){
-      // Game level
-      gameLevel.addEventListener('change',selectGameLevel);
+      
       //load word from array
       showWord(words);
       //Match on word input
@@ -84,20 +99,6 @@ const words = [
   }
 
 
-  function selectGameLevel(){
-    console.log(gameLevel.value);
-    if (gameLevel.value === "easy"){
-      //To change level
-      let currentLevel =  levels.easy; 
-    }else if(gameLevel.value === "medium"){
-      let currentLevel =  levels.medium;
-    }else{
-      let currentLevel =  levels.hard;
-    }
-    console.log(currentLevel);
-    
-  }
-
   //pick & show random word
     function showWord(words){
       const index = Math.floor(Math.random() * words.length);
@@ -107,6 +108,9 @@ const words = [
 
   //Start match
   function startMatch(){
+      if(currentLevel === 0){
+      alert("Please choose the level.")
+     }
       if(matchWords()){
           isPlaying = true;
           time = currentLevel + 1;
