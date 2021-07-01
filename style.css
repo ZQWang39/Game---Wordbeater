@@ -93,17 +93,33 @@ body{
     font-size: 22px;
     font-weight: bolder;
 }
-
+.game-display{
+    display:flex;
+    flex-direction: row;
+    width:400px;
+    height:100px;
+    margin:20px auto;
+    
+}
 .display{
     text-align: center;
     font-size: 22px;
     font-weight: bolder;
     color:black;
+    margin:auto;
+}
+.top-score{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+    color:black;
     margin-top: 20px;
+    margin:auto;
 }
 
 .time,
-.score{
+.score,
+.top-score span{
     color:cadetblue;
 }
 
