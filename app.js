@@ -7,16 +7,6 @@ const levels = {
   medium: 3,
   hard: 1
 }
-//const currentLevel = levels.easy;
-//Globals
-/*
-let currentLevel;
-
-let time;
-let score = 0;
-let isPlaying;
-*/
-
 
 const wordInput = document.getElementById('wordInput');
 const currentWord = document.querySelector('.word');
@@ -42,7 +32,6 @@ let currentLevel= 0;
   }else{
     currentLevel = 0;
   }
-  //console.log(currentLevel);
   seconds.textContent = currentLevel;
   
 });
@@ -129,8 +118,9 @@ const words = [
 
   function matchWords(){
       if(wordInput.value === currentWord.textContent){
-        result.style.color = "green"
-        message.textContent ="Correct!!!"
+        result.style.display = "block";
+        result.style.color = "green";
+        message.textContent ="Correct!!!";
         return true;
       }else{
         message.textContent =""
@@ -155,9 +145,11 @@ const words = [
 
   function checkStatus(){
     if(!isPlaying && time === 0){
-       result.style.color = "red";
+        result.style.display = "block"
+        result.style.color = "red";
         message.textContent = "Game Over!!!"
         score = -1;
     }
+    
      
   }
