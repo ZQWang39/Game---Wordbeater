@@ -59,7 +59,7 @@ body{
   color:white;
 }
 .second{
-    color:cadetblue;
+    color:rgb(255, 94, 0);
     font-size: 28px;
 }
 
@@ -118,11 +118,13 @@ body{
 }
 
 .time,
-.score,
-.top-score span{
-    color:cadetblue;
+.score{
+    color:rgb(255, 94, 0);
 }
 
+.top-score span{
+    color:rgb(255, 0, 34);
+}
 .instruction{
     background-color: rgb(36, 26, 26);
     text-align: center;
