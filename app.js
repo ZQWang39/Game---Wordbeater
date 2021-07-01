@@ -42,13 +42,9 @@ let currentLevel= 0;
   
 });
 
-
 let time = currentLevel;
 let score = 0;
 let isPlaying;
-
-
-
 
   //Initialize game
 
@@ -129,56 +125,47 @@ let isPlaying;
         result.style.color = "red";
         message.textContent = "Game Over!!!"
         score = -1;
-    }
-     
+    }  
   }
-
-  
   //store top score to local storage
 
   function storeTopScore(score){
 
     if (gameLevel.value === "easy"){
-      //console.log(gameLevel.value);
-      //console.log(score);
-    if (localStorage.getItem('easyTopScore') === null){
-      //topScore.textContent = score;
-      //console.log(easyTopScore);
+      //easy-level
+     if (localStorage.getItem('easyTopScore') === null){
       localStorage.setItem('easyTopScore', score)
-  } else if (localStorage.getItem('easyTopScore') >= score){
+    } else if (localStorage.getItem('easyTopScore') >= score){
     topScore.textContent = localStorage.getItem('easyTopScore')
-  } else if (localStorage.getItem('easyTopScore') < score){
+    } else if (localStorage.getItem('easyTopScore') < score){
     topScore.textContent = score;
       localStorage.setItem('easyTopScore', score)
-  } 
- }else if(gameLevel.value === "medium"){
+    } 
+    //medium-level
+ } else if(gameLevel.value === "medium"){
   if (localStorage.getItem('mediumTopScore') === null){
     topScore.textContent = score;
     localStorage.setItem('mediumTopScore', score)
-} else if (localStorage.getItem('mediumTopScore') >= score){
+  } else if (localStorage.getItem('mediumTopScore') >= score){
   topScore.textContent = localStorage.getItem('mediumTopScore')
-} else if (localStorage.getItem('mediumTopScore') < score){
+  } else if (localStorage.getItem('mediumTopScore') < score){
   topScore.textContent = score;
     localStorage.setItem('mediumTopScore', score)
-} 
-    
-}else if(gameLevel.value === "hard"){
+  } 
+    //easy-level
+} else if(gameLevel.value === "hard"){
   if (localStorage.getItem('hardTopScore') === null){
     topScore.textContent = score;
     localStorage.setItem('hardTopScore', score)
-} else if (localStorage.getItem('hardTopScore') >= score){
+  } else if (localStorage.getItem('hardTopScore') >= score){
   topScore.textContent = localStorage.getItem('hardTopScore')
-} else if (localStorage.getItem('hardTopScore') < score){
-  topScore.textContent = score;
+  } else if (localStorage.getItem('hardTopScore') < score){
+    topScore.textContent = score;
     localStorage.setItem('hardTopScore', score)
-} 
+  } 
     
+ }
 }
-    
-  }
- 
-
-
 
   const words = [
     "hat",
