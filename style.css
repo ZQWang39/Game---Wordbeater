@@ -100,20 +100,26 @@ body{
     margin:10px auto;
     
 }
-.display{
+.display,
+.top-score,
+.clear{
     text-align: center;
     font-size: 22px;
     font-weight: bolder;
     color:black;
     margin:auto;
 }
-.top-score{
+
+.clear button{
+    width: 80px;
+    height:30px;
+    margin-left: 5px;
     text-align: center;
-    font-size: 22px;
-    font-weight: bolder;
-    color:black;
-    margin-top: 20px;
-    margin:auto;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: orangered;
+    color: white;
+    border: none;
 }
 
 .time,
