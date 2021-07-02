@@ -17,6 +17,7 @@ const seconds = document.querySelector('.second');
 const result = document.querySelector('.result');
 const gameLevel = document.getElementById('level');
 const topScore = document.getElementById('topScore');
+const clearBtn = document.getElementById('clearBtn');
 
 let currentLevel= 0;
  // Choose game level
@@ -41,6 +42,14 @@ let currentLevel= 0;
   seconds.textContent = currentLevel;
   
 });
+
+//Clear Game records:
+clearBtn.addEventListener('click',clearFromLocalStorage);
+function clearFromLocalStorage(){
+  localStorage.clear();
+  topScore.textContent = 0;
+}
+
 
 let time = currentLevel;
 let score = 0;
