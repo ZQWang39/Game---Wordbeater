@@ -137,19 +137,19 @@ let isPlaying;
       localStorage.setItem('easyTopScore', score)
     } else if (localStorage.getItem('easyTopScore') >= score){
     topScore.textContent = localStorage.getItem('easyTopScore')
-    } else if (localStorage.getItem('easyTopScore') < score){
-    topScore.textContent = score;
+    } else{
+      topScore.textContent = score;
       localStorage.setItem('easyTopScore', score)
     } 
     //medium-level
- } else if(gameLevel.value === "medium"){
+  } else if(gameLevel.value === "medium"){
   if (localStorage.getItem('mediumTopScore') === null){
     topScore.textContent = score;
     localStorage.setItem('mediumTopScore', score)
   } else if (localStorage.getItem('mediumTopScore') >= score){
   topScore.textContent = localStorage.getItem('mediumTopScore')
-  } else if (localStorage.getItem('mediumTopScore') < score){
-  topScore.textContent = score;
+  } else{
+     topScore.textContent = score;
     localStorage.setItem('mediumTopScore', score)
   } 
     //easy-level
@@ -159,7 +159,7 @@ let isPlaying;
     localStorage.setItem('hardTopScore', score)
   } else if (localStorage.getItem('hardTopScore') >= score){
   topScore.textContent = localStorage.getItem('hardTopScore')
-  } else if (localStorage.getItem('hardTopScore') < score){
+  } else {
     topScore.textContent = score;
     localStorage.setItem('hardTopScore', score)
   } 
