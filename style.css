@@ -117,11 +117,10 @@ body{
     text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    background-color: orangered;
     color: white;
-    border: none;
+    background-color: rgb(255, 94, 0);
 }
-#clearBtn{
+#clearBtn:hover{
     background-color: red;
 }
 
