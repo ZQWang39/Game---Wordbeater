@@ -121,6 +121,9 @@ body{
     color: white;
     border: none;
 }
+.clear button:hover{
+    background-color: red;
+}
 
 .time,
 .score{
