@@ -110,7 +110,7 @@ body{
     margin:auto;
 }
 
-.clear button{
+#clearBtn{
     width: 80px;
     height:30px;
     margin-left: 5px;
@@ -121,7 +121,7 @@ body{
     color: white;
     border: none;
 }
-.clear button:hover{
+#clearBtn{
     background-color: red;
 }
 
