@@ -1,7 +1,11 @@
 WordBeater
 
-Description:
-Simple speed typing app built with HTML CSS and Javascript
+Technologies used :
+HTML CSS SASS JavaScript Webpack 
 
-Use:
-Run index.html in a browser, choose the game level first and type the first word to start the game...
+Instructions:
+npm install 
+npm run build-prod 
+
+How to play:
+Choose the game level first and type the first word to start the game...
