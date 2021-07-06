@@ -14,7 +14,7 @@ gameLevel.addEventListener('change',selectGameLevel);
 
 
  //Clear Game records:
- const clearBtn = document.getElementById('clearBtn');
+const clearBtn = document.getElementById('clearBtn');
 clearBtn.addEventListener('click',clearFromLocalStorage);
 
 
