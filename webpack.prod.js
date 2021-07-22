@@ -6,6 +6,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 
 module.exports = {
@@ -69,6 +70,23 @@ module.exports = {
     new MiniCssExtractPlugin({ 
       filename: "[name].css",
   }),
+  new FaviconsWebpackPlugin({
+    logo: './src/client/img/logo.jpg',
+    mode: 'webapp', // optional can be 'webapp', 'light' or 'auto' - 'auto' by default
+    devMode: 'webapp', // optional can be 'webapp' or 'light' - 'light' by default 
+    favicons: {
+      appName: 'my-app',
+      appDescription: 'My awesome App',
+      developerName: 'Me',
+      developerURL: null, // prevent retrieving from the nearest package.json
+      background: '#ddd',
+      theme_color: '#333',
+      icons: {
+        coast: false,
+        yandex: false
+      }
+    }
+  })
   ],
  
 }
